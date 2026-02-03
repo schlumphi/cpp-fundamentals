@@ -23,14 +23,11 @@ auto divide(const int lhs, const int rhs) -> std::string {
 std::string calculate(const std::string& command, int first, int second) {
     if (command == "add") {
         return add(first, second);
-    }
-    else if (command == "subtract") {
+    } else if (command == "subtract") {
         return subtract(first, second);
-    }
-    else if (command == "multiply") {
+    } else if (command == "multiply") {
         return multiply(first, second);
-    }
-    else if (command == "divide") {
+    } else if (command == "divide") {
         return divide(first, second);
     }
     return "Invalid data";
