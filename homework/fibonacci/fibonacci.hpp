@@ -6,7 +6,7 @@ int fibonacci_iterative(int sequence) {
     } else if (sequence == 1) {
         return 1;
     }
-    
+
     auto fn2{0};
     auto fn1{1};
     for (auto i = 2; i < sequence; ++i) {
