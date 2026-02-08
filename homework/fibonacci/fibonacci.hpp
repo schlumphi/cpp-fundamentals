@@ -10,7 +10,7 @@ int fibonacci_iterative(int sequence) {
     auto fn2{0};
     auto fn1{1};
     for (auto i = 2; i < sequence; ++i) {
-        auto tmp = fn1 + fn2;
+        const auto tmp = fn1 + fn2;
         fn2 = fn1;
         fn1 = tmp;
     }
