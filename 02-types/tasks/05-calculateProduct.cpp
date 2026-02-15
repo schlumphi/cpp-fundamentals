@@ -1,4 +1,11 @@
 #include <iostream>
+#include <memory>
+
+auto calculateProduct(const int lhs, const int rhs) -> std::shared_ptr<int> {
+    auto number = std::make_shared<int>(lhs * rhs);
+    std::cout << "num: " << *number << " | owners: " << number.use_count() << "\n";
+    return number;
+}
 
 // TODO: Implement calculateProduct()
 // It should take 2 int values and return their product as a shared_ptr.
