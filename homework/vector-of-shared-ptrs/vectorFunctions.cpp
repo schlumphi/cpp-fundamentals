@@ -20,12 +20,20 @@ auto print(const std::vector<std::shared_ptr<int>>& data) -> void {
 
 auto add10(const std::vector<std::shared_ptr<int>>& data) -> void {
     for (auto& elem : data) {
-        *elem += 10;
+        if (elem != nullptr) {
+            *elem += 10;
+        }
     }
 }
 
 auto sub10(int* const data) -> void {
-    *data -= 10;
+    if (data != nullptr) {
+        *data -= 10;
+    }
 }
 
-// auto sub10(const std::vector<std::shared_ptr<int>>& data) -> void;
+auto sub10(const std::vector<std::shared_ptr<int>>& data) -> void {
+    for (auto& elem : data) {
+        sub10(elem.get());
+    }
+}
