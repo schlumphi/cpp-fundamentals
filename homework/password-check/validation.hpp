@@ -19,4 +19,4 @@ inline const std::map<const ErrorCode, std::string_view> error_messages{
     {ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter, "Password needs to have at least one uppercase letter"},
     {ErrorCode::PasswordsDoNotMatch, "Passwords do not match"}};
 
-auto getErrorMessage(const ErrorCode error) -> std::string;
+auto getErrorMessage(const ErrorCode error) -> std::string_view;
