@@ -20,3 +20,5 @@ inline const std::map<const ErrorCode, std::string_view> error_messages{
     {ErrorCode::PasswordsDoNotMatch, "Passwords do not match"}};
 
 auto getErrorMessage(const ErrorCode error) -> std::string_view;
+
+auto doPasswordsMatch(std::string_view lhs, std::string_view rhs) -> bool;
