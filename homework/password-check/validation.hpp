@@ -26,3 +26,5 @@ auto getErrorMessage(const ErrorCode error) -> std::string_view;
 auto doPasswordsMatch(std::string_view lhs, std::string_view rhs) -> bool;
 
 auto checkPasswordRules(std::string_view password) -> ErrorCode;
+
+auto checkPassword(std::string_view lhs, std::string_view rhs) -> ErrorCode;

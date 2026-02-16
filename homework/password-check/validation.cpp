@@ -26,11 +26,10 @@ auto checkPasswordRules(std::string_view password) -> ErrorCode {
     return ErrorCode::Ok;
 }
 
-enum class ErrorCode {
-    Ok,
-    PasswordNeedsAtLeastNineCharacters,
-    PasswordNeedsAtLeastOneNumber,
-    PasswordNeedsAtLeastOneSpecialCharacter,
-    PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordsDoNotMatch
-};
+auto checkPassword(std::string_view lhs, std::string_view rhs) -> ErrorCode {
+    if (doPasswordsMatch(lhs, rhs)) {
+        return checkPasswordRules(lhs);
+    } else {
+        return ErrorCode::PasswordsDoNotMatch;
+    }
+}
