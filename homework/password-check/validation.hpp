@@ -11,6 +11,8 @@ enum class ErrorCode {
     PasswordsDoNotMatch
 };
 
+inline constexpr size_t MIN_PASSWORD_LEN = 9;
+
 inline const std::map<const ErrorCode, std::string_view> error_messages{
     {ErrorCode::Ok, "Ok"},
     {ErrorCode::PasswordNeedsAtLeastNineCharacters, "Password needs to have at least nine characters"},
@@ -22,3 +24,5 @@ inline const std::map<const ErrorCode, std::string_view> error_messages{
 auto getErrorMessage(const ErrorCode error) -> std::string_view;
 
 auto doPasswordsMatch(std::string_view lhs, std::string_view rhs) -> bool;
+
+auto checkPasswordRules(std::string_view password) -> ErrorCode;
